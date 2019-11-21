@@ -1,7 +1,8 @@
 from random import randint
 #start
 print("---------------------------------------------\n----------------Bienvenue--------------------\n------------dans votre jeu du----------------\n----------Pierre,Feuille,Ciseau--------------\n---------------------------------------------\n")
-
+score_ordi=0
+score_joueur=0
 #input for name player
 def commencer():
     nom=input("Veuillez entrer votre nom pour jouer :")
@@ -33,17 +34,24 @@ def commencer():
     if joueur == choix:
         print("Match nul comme toi!!")
     elif joueur == "pierre" and choix=="feuille":
-        print("Perdue!! serieusement une feuille arrive à te battre... laisse moi rire! ")  
-    elif joueur == "feuille" and choix== "pierre":      
+        print("Perdue!! serieusement une feuille arrive à te battre... laisse moi rire! ") 
+        score_ordi+= 1
+    elif joueur == "feuille" and choix== "pierre":  
+        score_joueur +=1    
         print("coup de chance vous avez gagné")
-    elif joueur == "ciseaux" and choix== "pierre": 
+    elif joueur == "ciseaux" and choix== "pierre":
+        score_ordi+= 1 
         print("Perdue!! je vous écrasse avec ma pierre!! ")
     elif joueur == "pierre" and choix== "ciseau": 
+        score_joueur +=1
         print("coup de chance vous avez gagné")
-    elif joueur == "feuille" and choix== "ciseau": 
+    elif joueur == "feuille" and choix== "ciseau":
+        score_ordi+= 1 
         print("Perdue!! je vous découpe c'est tellement facile!! ")
     elif joueur == "ciseaux" and choix== "feuille": 
+        score_joueur +=1
         print("coup de chance vous avez gagné")
+        
 commencer()
 
 #player if want replay
